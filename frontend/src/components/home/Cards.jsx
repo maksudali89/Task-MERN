@@ -22,7 +22,7 @@ const Cards = ({ home, setAddTaskModel, data }) => {
 
   const HandlerForUpdateTask = async () => {
     const response = await axios.put(
-      `http://localhost:5000/task/update-task/${selectedTask._id}`,
+      `https://task-mern-wb8q.onrender.com/task/update-task/${selectedTask._id}`,
       { title, desc },
       {
         headers: {
@@ -36,7 +36,7 @@ const Cards = ({ home, setAddTaskModel, data }) => {
 
   const HandlerForImportant = async (id) => {
     await axios.put(
-      `http://localhost:5000/task/imp-task-update/${id}`,
+      `https://task-mern-wb8q.onrender.com/task/imp-task-update/${id}`,
       {},
       {
         headers: {
@@ -49,7 +49,7 @@ const Cards = ({ home, setAddTaskModel, data }) => {
 
   const HandlerForComplete = async (id) => {
     await axios.put(
-      `http://localhost:5000/task/comp-task-update/${id}`,
+      `https://task-mern-wb8q.onrender.com/task/comp-task-update/${id}`,
       {},
       {
         headers: {
@@ -61,7 +61,7 @@ const Cards = ({ home, setAddTaskModel, data }) => {
   };
 
   const HandlerDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/task/delete-task/${id}`, {
+    await axios.delete(`https://task-mern-wb8q.onrender.com/task/delete-task/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
