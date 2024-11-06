@@ -7,7 +7,7 @@ import axios from 'axios';
   const [InCompleteData,setInCompletedData] = useState("");
   useEffect(()=>{
     const FetchData = async () =>{
-        const response =  await axios.get('http://localhost:5000/task/inCmp-task',{
+        const response =  await axios.get('https://task-mern-wb8q.onrender.com/task/inCmp-task',{
           headers:{
             Authorization:`Bearer ${localStorage.getItem("token")}`
           }

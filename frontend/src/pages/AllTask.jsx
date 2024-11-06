@@ -12,7 +12,7 @@ const AllTask = () => {
 
   useEffect(() => {
     const AllData = async () => {
-      const response = await axios.get("http://localhost:5000/task/all-task", {
+      const response = await axios.get("https://task-mern-wb8q.onrender.com/task/all-task", {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -31,7 +31,7 @@ const AllTask = () => {
     try {
       e.preventDefault();
       await axios.post(
-        "http://localhost:5000/task/add-task",
+        "https://task-mern-wb8q.onrender.com/task/add-task",
         { title, desc },
         {
           headers: {

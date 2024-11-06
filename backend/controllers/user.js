@@ -2,15 +2,12 @@ import { User } from "../models/user.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 export async function HandlerForUserSignUp(req, res) {
-  return res.end("hello from ")
   try {
     const { userName, email, phone, password } = req.body;
     const exitingUser = await User.findOne({ email });
 
     if (exitingUser) {
-      return res
-        .status(404)
-        .json({ message: "User  Already Exits ! " });
+      return res.status(404).json({ message: "User  Already Exits ! " });
     }
     const hashedPas = await bcryptjs.hash(password, 10);
     const user = await User.create({
