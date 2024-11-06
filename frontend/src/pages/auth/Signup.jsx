@@ -12,6 +12,7 @@ const SignUp = () => {
   const token = localStorage.getItem("token");
   // console.log(Id,token)
   const API_KEY = process.env.BACKEND_API_KEY;
+  console.log(API_KEY);
   useEffect(() => {
     if (Id && token) {
       navigate("/");
