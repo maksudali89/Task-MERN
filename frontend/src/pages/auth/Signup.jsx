@@ -32,7 +32,7 @@ const SignUp = () => {
         // alert("All Field Are Required");
       }
       const Notification = (message) => toast.success(message);
-      const response = await axios.post(`${API_KEY}user/signup`, {
+      const response = await axios.post(`${API_KEY}/user/signup`, {
         userName,
         email,
         phone,
