@@ -12,7 +12,7 @@ const SignUp = () => {
   const token = localStorage.getItem("token");
   // console.log(Id,token)
   const API_KEY = process.env.BACKEND_API_KEY;
-  console.log(API_KEY);
+  console.log(`${API_KEY}`);
   useEffect(() => {
     if (Id && token) {
       navigate("/");
@@ -33,7 +33,7 @@ const SignUp = () => {
         // alert("All Field Are Required");
       }
       const Notification = (message) => toast.success(message);
-      const response = await axios.post(`${API_KEY}/user/signup`, {
+      const response = await axios.post(` https://task-mern-wb8q.onrender.com/user/signup`, {
         userName,
         email,
         phone,
