@@ -4,7 +4,6 @@ import { toast, ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { LoginUser } from "../../store/auth/auth";
 import axios from "axios";
-
 const Login = () => {
   const navigate = useNavigate();
   const IsLogged = useSelector((state) => state.auth.isLoggedIn);
@@ -12,7 +11,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
+    const API_KEY = process.env.BACKEND_API_KEY;
+    // console.log(API_KEY);
   // Use useEffect to handle navigation after render
   useEffect(() => {
     if (IsLogged === true) {
@@ -26,7 +26,7 @@ const Login = () => {
       if (email === "" && password === "") {
         toast.warn("Email And Password Required");
       } else {
-        const response = await axios.post("http://localhost:5000/user/login", {
+        const response = await axios.post(`${API_KEY}/user/login`, {
           email,
           password,
         });

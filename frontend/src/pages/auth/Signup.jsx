@@ -11,6 +11,7 @@ const SignUp = () => {
   const Id = localStorage.getItem("id");
   const token = localStorage.getItem("token");
   // console.log(Id,token)
+  const API_KEY = process.env.BACKEND_API_KEY;
   useEffect(() => {
     if (Id && token) {
       navigate("/");
@@ -31,7 +32,7 @@ const SignUp = () => {
         // alert("All Field Are Required");
       }
       const Notification = (message) => toast.success(message);
-      const response = await axios.post("http://localhost:5000/user/signup", {
+      const response = await axios.post(`${API_KEY}/user/signup`, {
         userName,
         email,
         phone,
