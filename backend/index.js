@@ -23,7 +23,5 @@ app.use("/user", UserRoute);
 app.use("/task", TaskRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log(
-    `server is running on http://127.0.0.1:${process.env.PORT || 4000}`
-  );
+  console.log(`server is running on `);
 });

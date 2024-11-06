@@ -26,7 +26,7 @@ const Login = () => {
       if (email === "" && password === "") {
         toast.warn("Email And Password Required");
       } else {
-        const response = await axios.post(`${API_KEY}/user/login`, {
+        const response = await axios.post(`${API_KEY}user/login`, {
           email,
           password,
         });
