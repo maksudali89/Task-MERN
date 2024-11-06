@@ -17,7 +17,7 @@ app.use(express.json());
 
 // for testing purpose
 app.get("/", async (req, res) => {
-  return res.send("hello from production");
+  return res.end("hello from production");
 });
 app.use("/user", UserRoute);
 app.use("/task", TaskRoutes);
